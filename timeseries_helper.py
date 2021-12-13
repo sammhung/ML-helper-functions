@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 
-def plot_time_series(timesteps, values, format=".", start=0, end=None, label=None):
+def plot_time_series(timesteps, values, name, format=".", start=0, end=None, label=None):
   """
   Plot's timesteps (a series of points in time) against values (a series of values across timesteps)
 
@@ -20,7 +20,7 @@ def plot_time_series(timesteps, values, format=".", start=0, end=None, label=Non
   #plt.figure(figsize=(10, 7))
   plt.plot(timesteps[start:end], values[start:end], format, label=label)
   plt.xlabel("Time")
-  plt.ylabel("BTC Price")
+  plt.ylabel(name)
   if label:
     plt.legend(fontsize=14)
   plt.grid(True)
